@@ -1,13 +1,17 @@
 import React from 'react';
 
-
 const Cart = (props) => {
+
   const { cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
   const totalPrice = itemsPrice;
 
+
   return (
     <div className="block-cart col-1">
+
+
+
       <h2>Carrinho</h2>
       <div>
         {cartItems.length === 0 && <div>Carrinho vazio </div>}
