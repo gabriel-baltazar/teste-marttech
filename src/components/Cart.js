@@ -1,6 +1,8 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import Modal from './Modal'
 const Cart = (props) => {
+
+  const [isModalVisible, setIsModalVisible] = useState(false)
 
   const { cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
@@ -10,8 +12,6 @@ const Cart = (props) => {
   return (
     <div className="block-cart col-1">
 
-
-
       <h2>Carrinho</h2>
       <div>
         {cartItems.length === 0 && <div>Carrinho vazio </div>}
@@ -19,8 +19,8 @@ const Cart = (props) => {
           <div key={item.id} className="row">
             <div className="col-2">{item.name}</div>
             <div className="col-2">
-              <button onClick={() => onAdd(item)} className="add">+</button>
               <button onClick={() => onRemove(item)} className="remove">-</button>
+              <button onClick={() => onAdd(item)} className="add">+</button>
             </div>
             <div className="col-2 text-right">
               {item.qty} x R${item.price.toFixed(2)}
@@ -37,7 +37,8 @@ const Cart = (props) => {
             </div>
             <hr />
             <div className="row">
-              <button className="button">Finalizar</button>
+              <button onClick={() => setIsModalVisible(true)} className="button">Finalizar</button>
+              {isModalVisible ? <Modal onClose={() => setIsModalVisible(false)} /> : null}
             </div>
           </>
         )}

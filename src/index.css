@@ -78,13 +78,14 @@ img.small {
   background-color: cadetblue;
   width: 1.5rem;
   border: none;
+  margin-left: 0.3rem;
   
 }
 .remove{
   background-color:indianred;
   width: 1.5rem;
   border: none;
-  margin-left: 0.5rem;
+  
 }
 .text-right{
   text-align: right;

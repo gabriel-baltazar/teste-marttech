@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Product = (props) => {
-  const { product, onAdd, onRemove } = props;
+  const { product, onAdd } = props;
   return (
     <div className="flex">
       <div style={{ marginBottom: '1rem' }}>

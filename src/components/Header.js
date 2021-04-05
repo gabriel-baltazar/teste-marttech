@@ -6,9 +6,7 @@ const Header = () => {
     <header className="row block center">
 
       <div>
-        <a href="#/">
-          <h1>Loja</h1>
-        </a>
+        <h1>Loja</h1>
       </div>
       <div className="button">
         <Link to="/produtos">Produtos</Link>
